@@ -37,6 +37,9 @@ class Product(models.Model):
         related_name="products",
         verbose_name="Категория",
     )
+
+    viwes_counter = models.PositiveIntegerField(default=0, verbose_name="Количество просмотров")
+
     price = models.DecimalField(
         max_digits=10, decimal_places=2, verbose_name="Цена за покупку"
     )

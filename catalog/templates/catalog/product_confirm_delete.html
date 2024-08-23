@@ -9,17 +9,18 @@
         <div class="col-6">
             <form class="row" method="post" enctype="multipart/form-data">
                 <div class="card">
+                    <div class="card-header">
+                        Удаление товара "{{ object.name }}"
+                    </div>
                     <div class="card-body">
                         {% csrf_token %}
-                        {{ form.as_p }}
+
                     </div>
                     <button type="submit" class="btn btn-primary">
-                        {% if object %}
-                        сохранить
-                        {% else %}
-                        Создать
-                        {% endif %}
+                        удалить
                     </button>
+                    <a class="btn btn-primary" href="{% url 'catalog:product_detail'  %}" role="button">Отменить</a>
+
                 </div>
             </form>
         </div>

@@ -164,7 +164,7 @@
 
 
 <header data-bs-theme="dark">
-{% include 'includes/inc_menu.html' %}
+{% include 'catalog/includes/inc_menu.html' %}
 </header>
 
 <main>
@@ -175,8 +175,8 @@
         <h1 class="fw-light">ReForm</h1>
         <p class="lead text-body-secondary">Explore our curated selection of products, designed to meet your everyday needs. From cutting-edge electronics and gadgets to essential home appliances and cozy home goods, we offer a variety of items that combine quality, functionality, and style. Each product comes with detailed descriptions and key features to help you make the best choice. Whether you're upgrading your home or looking for the perfect gift, you'll find something special here.</p>
         <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+          <a class="btn btn-primary" href="{% url 'catalog:product_create' %}" role="button">Создать товар</a>
+
         </p>
       </div>
     </div>
