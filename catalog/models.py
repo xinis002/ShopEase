@@ -2,6 +2,8 @@ from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
 
+from users.models import User
+
 
 class Category(models.Model):
     name = models.CharField(max_length=255, verbose_name="Наименование")
@@ -54,6 +56,12 @@ class Product(models.Model):
     manufactured_at = models.DateField(
         null=True, blank=True, verbose_name="Дата производства продукта"
     )
+
+    owner = models.ForeignKey(User, verbose_name="owner", help_text="Owner", blank=True, null=True, on_delete=models.SET_NULL)
+
+
+
+
 
     class Meta:
         verbose_name = "Продукт"
