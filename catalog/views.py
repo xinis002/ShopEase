@@ -7,6 +7,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 
 from .forms import ProductForm, VersionForm, ProductModeratorForm
 from .models import Product, BlogPost, Version
+from .services import get_products_from_cache
 
 
 #def home(request):
@@ -34,6 +35,9 @@ class ContactsView(TemplateView):
 
 class ProductListView(ListView):
     model = Product
+
+    def get_queryset(self):
+        return get_products_from_cache()
 
 
 class ProductFormView(DetailView):
