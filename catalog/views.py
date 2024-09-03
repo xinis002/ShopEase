@@ -40,7 +40,7 @@ class ProductListView(ListView):
         return get_products_from_cache()
 
 
-class ProductFormView(DetailView):
+class ProductFormView(LoginRequiredMixin, DetailView):
     model = Product
 
     def get_object(self, queryset=None):
